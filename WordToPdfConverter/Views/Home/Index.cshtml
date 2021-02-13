@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@{Html.BeginForm("Index", "Home", FormMethod.Post, new { enctype = "multipart/form-data" });
+    {
+        <div class="Common">
+            <div class="tablediv">
+                <div class="rowdiv">
+                                YOU CAN CONVERT .DOC to PDF HERE!!!
+
+                </div>
+                <img src="https://www.themarketingguardian.com/wp-content/uploads/2020/11/New-Project-2020-11-17T193432.049.jpg" alt="image" width="500" height="400">
+                <div class="rowdiv" style="border-width: 2px;border-style:solid; border-color: blue; padding: 10px 50px 70px 50px">
+                    Click the button to view the resultant PDF document converted from a Word document !
+                    <div class="rowdiv" style="margin-top: 10px">
+                        <div class="celldiv" style="font-weight:bold; border-color: blueviolet";>
+                            Select Document :
+                            @Html.TextBox("file", "", new { type = "file", accept = ".doc,.docx,docm,.xml" }) <br>
+                        </div>
+                        <div class="rowdiv" style="margin-top: 8px">
+                            <input class="buttonStyle" value="Convert to PDF" name="button" style="width:150px;border-color: blue;height:27px" type="submit" tabindex="159">
+                            <br>
+                            <div class="text-danger">
+                                @ViewBag.Message
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        Html.EndForm();
+    }}
